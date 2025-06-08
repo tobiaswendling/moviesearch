@@ -1,7 +1,6 @@
 <?php
 
 use App\Livewire\Pages\Authentication\Login;
-use App\Livewire\Pages\Index;
 use App\Models\User;
 use Livewire\Livewire;
 use Illuminate\Foundation\Testing\RefreshDatabase;
