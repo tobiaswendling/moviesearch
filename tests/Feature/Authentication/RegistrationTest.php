@@ -24,6 +24,9 @@ it('registers a user with valid credentials', function () {
         ->set($data)
         ->call('register')
         ->assertRedirect(route('index'));
+
+    $this->assertTrue(Auth::check());
+    $this->assertEquals($data['form.username'], Auth::user()->username);
 });
 
 it('does not register a user with invalid credentials', function () {
@@ -61,4 +64,6 @@ it('does not register a user with invalid credentials', function () {
         ->set($data)
         ->call('register')
         ->assertHasErrors(['form.email']);
+
+    $this->assertFalse(Auth::check());
 });
