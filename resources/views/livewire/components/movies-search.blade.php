@@ -9,7 +9,7 @@
                 {{ __(':count movies found for ":search"', ['count' => $total, 'search' => $search ]) }}
             </p>
             <div wire:loading.class="opacity-50 pointer-events-none" class="transition-opacity">
-                <livewire:components.movies-grid :movies="$results"/>
+                <livewire:components.movies-grid :wire:key="str()->slug($search)" :movies="$results"/>
             </div>
         </div>
     @else
