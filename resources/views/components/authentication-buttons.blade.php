@@ -1,5 +1,6 @@
 <div class="flex gap-2">
     <flux:button icon="magnifying-glass" wire:navigate href="{{ route('index') }}"/>
+    <flux:button icon="film" wire:navigate href="{{ route('movies.index') }}"/>
 
     @if(auth()->check())
         <flux:button icon="home" wire:navigate href="{{ route('dashboard') }}"/>

@@ -1,32 +1,28 @@
 <?php
 
-namespace App\Livewire\Pages\Administration;
+namespace App\Livewire\Pages\Movies;
 
 use App\Models\Movie;
 use App\Models\MovieRating;
 use Illuminate\View\View;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
-use Livewire\WithPagination;
 
 #[Layout('components.layouts.basic')]
-class Dashboard extends Component
+class Index extends Component
 {
-    use WithPagination;
-
     public function render(): View
     {
-        return view('livewire.pages.administration.dashboard', [
+        return view('livewire.pages.movies.index', [
             'movies' => Movie::query()
-                ->withWhereHas('ratings', fn ($query) => $query->where('user_id', auth()->id()))
+                ->withWhereHas('ratings')
                 ->orderByDesc(
                     MovieRating::select('created_at')
                         ->whereColumn('movie_id', 'movies.id')
-                        ->where('user_id', auth()->id())
                         ->latest()
                         ->limit(1)
                 )
                 ->paginate(10),
-        ])->title(__('Dashboard'));
+        ])->title(__('Rated movies'));
     }
 }
