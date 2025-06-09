@@ -38,6 +38,7 @@ return [
     'omdb_api' => [
         'key' => env('OMDB_API_KEY'),
         'base_url' => 'https://www.omdbapi.com/',
+        'cache_ttl' => [(60 * 60 * 1), (60 * 60 * 2)],
     ]
 
 ];
