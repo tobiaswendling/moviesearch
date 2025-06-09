@@ -14,6 +14,6 @@ class LogoutAction
         Session::invalidate();
         Session::regenerateToken();
 
-        return to_route('login');
+        return to_route('index');
     }
 }

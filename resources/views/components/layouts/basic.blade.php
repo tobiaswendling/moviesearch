@@ -1,10 +1,11 @@
-<x-layouts.app>
+<x-layouts.app :title="$title">
     <header class="py-4">
-        <div class="container flex justify-end gap-2">
+        <div class="container flex justify-between items-center gap-2">
+            <div></div>
             <x-authentication-buttons/>
         </div>
     </header>
-    <main class="py-4">
+    <main>
         <div class="container">
             {{ $slot }}
         </div>

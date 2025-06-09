@@ -5,10 +5,10 @@
     </div>
     @if ($search)
         <div class="flex flex-col gap-4">
-            <div>
+            <p class="text-sm">
                 {{ __(':count movies found for ":search"', ['count' => $total, 'search' => $search ]) }}
-            </div>
-            <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+            </p>
+            <div wire:loading.class="opacity-50 pointer-events-none" class="transition-opacity grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
                  x-data="{ loading_movie_imdb: null }">
                 @foreach ($results as $movie)
                     <a wire:navigate

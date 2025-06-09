@@ -22,6 +22,7 @@ class Registration extends Component
 
     public function render(): View
     {
-        return view('livewire.pages.authentication.registration');
+        return view('livewire.pages.authentication.registration')
+            ->title(__('Registration'));
     }
 }

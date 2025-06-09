@@ -12,13 +12,13 @@ use Livewire\Attributes\Layout;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
-#[Layout('components.layouts.public')]
+#[Layout('components.layouts.basic')]
 class Show extends Component
 {
     public string $imdb_id;
 
     #[On('movie-rated')]
-    public function movieRated(int $rating): void
+    public function saveRating(int $rating): void
     {
         if(!$this->movie->current_user_rating) {
             if(!$this->movie->id) {
@@ -56,6 +56,7 @@ class Show extends Component
 
     public function render(): View
     {
-        return view('livewire.pages.movies.show');
+        return view('livewire.pages.movies.show')
+            ->title($this->movie->title);
     }
 }
