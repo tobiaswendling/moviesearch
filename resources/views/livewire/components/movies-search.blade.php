@@ -1,6 +1,6 @@
 <div class="flex flex-col gap-4">
     <div class="flex flex-col gap-2">
-        <flux:input autocomplete="off" wire:model.live.debounce.300ms="search"/>
+        <flux:input icon="magnifying-glass" :placeholder="__('Search for a movie')" autocomplete="off" wire:model.live.debounce.300ms="search"/>
         @error('search') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
     </div>
     @if ($search)
