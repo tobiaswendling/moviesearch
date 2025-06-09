@@ -10,7 +10,9 @@
             </div>
             <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
                 @foreach ($results as $movie)
-                    <livewire:components.movie-poster :wire:key="$movie->imdb_id" :poster_url="$movie->poster_url" :title="$movie->title"/>
+                    <a wire:navigate href="{{ route('movies.show', ['imdb_id' => $movie->imdb_id]) }}" class="flex flex-col gap-2">
+                        <livewire:components.movie-poster :wire:key="$movie->imdb_id" :poster_url="$movie->poster_url" :title="$movie->title"/>
+                    </a>
                 @endforeach
             </div>
         </div>
