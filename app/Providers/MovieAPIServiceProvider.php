@@ -3,8 +3,10 @@
 namespace App\Providers;
 
 use App\Contracts\MovieAPIService;
+use App\Livewire\Synthesizers\OMDbAPIMovieDTOSynth;
 use App\Services\OMDbAPIService;
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
 
 class MovieAPIServiceProvider extends ServiceProvider
 {
@@ -16,5 +18,6 @@ class MovieAPIServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        Livewire::propertySynthesizer(OMDbAPIMovieDTOSynth::class);
     }
 }
