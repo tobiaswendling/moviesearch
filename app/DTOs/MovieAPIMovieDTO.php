@@ -8,6 +8,7 @@ abstract class MovieAPIMovieDTO
         public string $imdb_id,
         public string $title,
         public ?string $poster_url = null,
+        public ?string $plot = null,
     ) {}
 
     public function toArray(): array
@@ -16,6 +17,7 @@ abstract class MovieAPIMovieDTO
             'imdb_id' => $this->imdb_id,
             'title' => $this->title,
             'poster_url' => $this->poster_url,
+            'plot' => $this->plot,
         ];
     }
 

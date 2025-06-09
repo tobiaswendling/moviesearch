@@ -67,6 +67,7 @@ class OMDbAPIService implements MovieAPIService
             $response = Http::get($this->base_url, array_merge($options, [
                 'apiKey' => $this->api_key,
                 'type' => 'movie',
+                'plot' => 'full',
             ]));
 
             if ($response->failed()) {

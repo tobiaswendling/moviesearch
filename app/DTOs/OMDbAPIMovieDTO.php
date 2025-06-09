@@ -10,6 +10,7 @@ class OMDbAPIMovieDTO extends MovieAPIMovieDTO
             imdb_id: $data['imdbID'],
             title: $data['Title'],
             poster_url: $data['Poster'] === 'N/A' ? null : $data['Poster'],
+            plot: $data['Plot'] ?? null,
         );
     }
 
@@ -19,6 +20,7 @@ class OMDbAPIMovieDTO extends MovieAPIMovieDTO
             imdb_id: $data['imdb_id'],
             title: $data['title'],
             poster_url: $data['poster_url'],
+            plot: $data['plot'],
         );
     }
 }
