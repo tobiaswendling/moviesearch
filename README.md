@@ -10,5 +10,3 @@ Die Lösung sollte folgende Hauptfunktionen beinhalten:
   - Alle bewerteten Filme sollen auf einer Seite auflistet werden
 
 Ziel ist es vor allem eine möglichst unabhängige, performante und ressourcenschonende Lösung zu entwickeln.
-
-- 
