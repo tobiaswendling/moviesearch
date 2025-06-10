@@ -51,7 +51,7 @@ it('does not log in a user with invalid credentials', function () {
     Livewire::test(Login::class)
         ->set($data)
         ->call('login')
-        ->assertHasErrors(['email']);
+        ->assertHasErrors(['form.email']);
 
     $this->assertFalse(Auth::check());
 
@@ -65,7 +65,7 @@ it('does not log in a user with invalid credentials', function () {
     Livewire::test(Login::class)
         ->set($data)
         ->call('login')
-        ->assertHasErrors(['email']);
+        ->assertHasErrors(['form.email']);
 
     $this->assertFalse(Auth::check());
 });
